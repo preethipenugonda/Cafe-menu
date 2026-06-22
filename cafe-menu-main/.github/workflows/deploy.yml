@@ -3,7 +3,7 @@ name: S3 Static website deployment
 on:
   push:
     branches:
-      - lmsprod
+      - lmsprod/cafe-menu-main
  
 jobs:
   deploy:
