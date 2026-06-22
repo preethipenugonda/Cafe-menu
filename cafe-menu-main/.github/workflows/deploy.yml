@@ -3,7 +3,7 @@ name: S3 Static website deployment
 on:
   push:
     branches:
-      - lmsprod/Cafe-menu/cafe-menu-main
+      - lmsprod
  
 jobs:
   deploy:
@@ -24,6 +24,6 @@ jobs:
  
     - name: Upload Files to S3
       run: |
-        aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+        aws s3 sync ./cafe-menu-main s3://${{ secrets.AWS_S3_BUCKET }} --delete \
         --exclude ".git/*" \
         --exclude ".github/*"
